@@ -1,0 +1,213 @@
+import type { ResumeData } from '../types/resume';
+
+export { type ResumeData } from '../types/resume';
+
+export const resumeData: ResumeData = {
+  name: "Alex Chen",
+  title: "Senior Full Stack Engineer",
+  avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
+  summary: "打造优雅用户体验的执着追求者",
+  about: [
+    "我是一名拥有 8 年经验的全栈工程师，专注于构建高性能、高可用的 Web 应用。对前端架构和用户体验优化有深入研究。",
+    "精通 React、Vue、Astro 等现代前端框架，熟悉 Node.js、Python 后端开发。在 SaaS 产品和企业级应用开发方面经验丰富。",
+    "热衷于开源社区贡献，热爱技术分享和团队协作。持续学习新技术，追求代码质量和工程效率的提升。"
+  ],
+  socials: [
+    { name: "GitHub", url: "https://github.com", icon: "github" },
+    { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
+    { name: "Email", url: "mailto:alex@example.com", icon: "mail" }
+  ],
+  experiences: [
+    {
+      id: "exp1",
+      company: "TechCorp Inc.",
+      position: "Senior Full Stack Engineer",
+      period: "2022.03 - 至今",
+      description: "主导企业级 SaaS 产品研发",
+      highlights: [
+        "负责核心产品架构设计与实现",
+        "领导 5 人技术团队完成多个大型项目",
+        "优化前端性能，将首屏加载时间降低 40%"
+      ]
+    },
+    {
+      id: "exp2",
+      company: "StartupXYZ",
+      position: "Frontend Lead",
+      period: "2020.06 - 2022.02",
+      description: "从 0 到 1 构建产品",
+      highlights: [
+        "主导产品前端架构设计与技术选型",
+        "建立团队开发规范和代码review流程",
+        "实现响应式设计，支持多端统一体验"
+      ]
+    },
+    {
+      id: "exp3",
+      company: "Digital Agency Co.",
+      position: "Frontend Developer",
+      period: "2018.07 - 2020.05",
+      description: "为客户打造精品 Web 项目",
+      highlights: [
+        "参与 20+ 商业项目开发",
+        "精通 Vue 生态，熟悉 Nuxt.js",
+        "获得公司年度最佳员工奖"
+      ]
+    }
+  ],
+  workProjects: [
+    {
+      id: "wp1",
+      name: "Enterprise Dashboard",
+      description: "企业级数据可视化仪表盘，支持实时数据展示、多维度分析和自定义报表功能。",
+      tags: ["React", "TypeScript", "D3.js", "Node.js"],
+      featured: true,
+      link: "#"
+    },
+    {
+      id: "wp2",
+      name: "E-commerce Platform",
+      description: "全栈电商平台，支持高并发秒杀、智能推荐和完整支付流程。",
+      tags: ["Next.js", "GraphQL", "PostgreSQL", "Redis"],
+      featured: true,
+      link: "#"
+    },
+    {
+      id: "wp3",
+      name: "CRM System",
+      description: "客户关系管理系统，包含销售管道、自动化营销和数据分析模块。",
+      tags: ["Vue3", "Spring Boot", "MySQL", "Docker"],
+      featured: false,
+      link: "#"
+    },
+    {
+      id: "wp4",
+      name: "Real-time Collaboration",
+      description: "实时协作工具，支持多人同时编辑、评论和任务分配。",
+      tags: ["WebSocket", "CRDT", "React", "MongoDB"],
+      featured: true,
+      link: "#"
+    }
+  ],
+  personalProjects: [
+    {
+      id: "pp1",
+      name: "OpenSource UI Components",
+      description: "一套高质量的 React 组件库，已获得 2k+ stars",
+      tags: ["React", "TypeScript", "Storybook"],
+      github: "https://github.com",
+      featured: true
+    },
+    {
+      id: "pp2",
+      name: "CLI Productivity Tool",
+      description: "命令行效率工具，帮助开发者自动化日常工作流程",
+      tags: ["Node.js", "TypeScript", "Ink"],
+      github: "https://github.com",
+      featured: false
+    },
+    {
+      id: "pp3",
+      name: "Mini Games Collection",
+      description: "有趣的网页小游戏集合，纯前端实现",
+      tags: ["Canvas", "JavaScript", "CSS3"],
+      github: "https://github.com",
+      featured: false
+    },
+    {
+      id: "pp4",
+      name: "Blog System",
+      description: "基于 Astro 的静态博客系统，支持 Markdown 和 MDX",
+      tags: ["Astro", "React", "Tailwind"],
+      github: "https://github.com",
+      featured: true
+    }
+  ],
+  skills: [
+    {
+      name: "Frontend",
+      icon: "code",
+      skills: [
+        { name: "React", level: 95 },
+        { name: "TypeScript", level: 90 },
+        { name: "Vue", level: 85 },
+        { name: "Astro", level: 80 },
+        { name: "Next.js", level: 85 },
+        { name: "Tailwind CSS", level: 90 }
+      ]
+    },
+    {
+      name: "Backend",
+      icon: "server",
+      skills: [
+        { name: "Node.js", level: 85 },
+        { name: "Python", level: 75 },
+        { name: "Go", level: 60 },
+        { name: "PostgreSQL", level: 80 },
+        { name: "Redis", level: 75 },
+        { name: "GraphQL", level: 80 }
+      ]
+    },
+    {
+      name: "DevOps",
+      icon: "cloud",
+      skills: [
+        { name: "Docker", level: 80 },
+        { name: "Kubernetes", level: 65 },
+        { name: "AWS", level: 70 },
+        { name: "CI/CD", level: 75 },
+        { name: "Linux", level: 70 }
+      ]
+    },
+    {
+      name: "Tools",
+      icon: "wrench",
+      skills: [
+        { name: "Git", level: 90 },
+        { name: "VS Code", level: 95 },
+        { name: "Figma", level: 70 },
+        { name: "Vim", level: 75 }
+      ]
+    }
+  ],
+  education: [
+    {
+      id: "edu1",
+      school: "Stanford University",
+      degree: "Master of Computer Science",
+      period: "2016 - 2018",
+      description: "专注于人机交互和分布式系统研究"
+    },
+    {
+      id: "edu2",
+      school: "Peking University",
+      degree: "Bachelor of Computer Science",
+      period: "2012 - 2016",
+      description: "GPA: 3.8/4.0, 优秀毕业生"
+    }
+  ],
+  awards: [
+    {
+      id: "award1",
+      name: "Google Developer Expert",
+      organization: "Google",
+      period: "2023",
+      description: "Web Technologies 领域 GDE"
+    },
+    {
+      id: "award2",
+      name: "Microsoft MVP",
+      organization: "Microsoft",
+      period: "2022",
+      description: "Azure 领域最有价值专家"
+    },
+    {
+      id: "award3",
+      name: "Best Open Source Contributor",
+      organization: "GitHub",
+      period: "2021",
+      description: "年度开源贡献者"
+    }
+  ],
+  email: "alex@example.com"
+};

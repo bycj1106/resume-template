@@ -1,0 +1,40 @@
+---
+import { resumeData } from '../data/resume';
+import GlassCard from './GlassCard.astro';
+import Icon from './Icon.astro';
+
+const { awards } = resumeData;
+---
+
+<GlassCard>
+  <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+    <span class="w-1 h-6 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+    Awards & Honors
+  </h2>
+  
+  <div class="space-y-4">
+    {awards.map((award, index) => (
+      <div 
+        class="flex gap-4 p-4 glass rounded-xl hover:bg-white/80 transition-colors"
+        style={`animation-delay: ${index * 100}ms`}
+      >
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/15 to-primary/15 border border-white/60 flex items-center justify-center flex-shrink-0">
+          <Icon name="award" class="w-6 h-6 text-accent" />
+        </div>
+        
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
+            <h3 class="text-lg font-semibold text-slate-800">{award.name}</h3>
+            <span class="text-sm text-slate-500 bg-slate-200/50 px-3 py-0.5 rounded-full">
+              {award.period}
+            </span>
+          </div>
+          <p class="text-secondary font-medium mb-1">{award.organization}</p>
+          {award.description && (
+            <p class="text-slate-500 text-sm">{award.description}</p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</GlassCard>

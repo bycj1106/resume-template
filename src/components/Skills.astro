@@ -1,0 +1,46 @@
+---
+import { resumeData } from '../data/resume';
+import type { IconName } from '../types/resume';
+import GlassCard from './GlassCard.astro';
+import Icon from './Icon.astro';
+
+const { skills } = resumeData;
+---
+
+<GlassCard>
+  <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+    <span class="w-1 h-6 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+    Skills & Expertise
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {skills.map((category, catIndex) => (
+      <div 
+        class="space-y-4"
+        style={`animation-delay: ${catIndex * 100}ms`}
+      >
+        <h3 class="text-sm font-semibold text-secondary flex items-center gap-2">
+          <Icon name={category.icon as IconName} class="w-4 h-4" />
+          {category.name}
+        </h3>
+        
+        <div class="flex flex-wrap gap-2">
+          {category.skills.map((skill, skillIndex) => (
+            <div 
+              class="group relative"
+              style={`animation-delay: ${(catIndex * 100) + (skillIndex * 50)}ms`}
+            >
+              <span class="inline-flex items-center px-3 py-1.5 text-sm bg-white/60 border border-slate-200 rounded-lg text-slate-600 hover:bg-white hover:border-primary/30 hover:text-primary transition-all duration-200 cursor-default">
+                {skill.name}
+              </span>
+              <div 
+                class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
+                style={`width: ${skill.level}%`}
+              ></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</GlassCard>

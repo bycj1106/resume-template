@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Education from '../components/Education.astro';
+import Awards from '../components/Awards.astro';
+import Contact from '../components/Contact.astro';
+import { resumeData } from '../data/resume';
+
+const { name, title } = resumeData;
+---
+
+<Layout title={`${name} - ${title}`}>
+  <main class="max-w-6xl mx-auto px-4 py-8 lg:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Left Sidebar - Fixed on Desktop -->
+      <div class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
+        <Hero />
+        <Contact />
+        <Education />
+        <Awards />
+      </div>
+      
+      <!-- Right Content Area -->
+      <div class="lg:col-span-8 space-y-6">
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-slate-400 text-sm">
+      <p>© {new Date().getFullYear()} Built with Astro & Tailwind CSS</p>
+    </footer>
+  </main>
+</Layout>

@@ -5,36 +5,28 @@ import GlassCard from './GlassCard.astro';
 const { experiences } = resumeData;
 ---
 
-<GlassCard>
-  <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-    <span class="w-1 h-6 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+<GlassCard delay={160}>
+  <h2 class="text-lg font-semibold text-slate-800 mb-6">
     Work Experience
   </h2>
   
   <div class="relative">
-    <!-- Timeline line -->
-    <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent/30"></div>
+    <div class="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-violet-400/40 via-purple-400/30 to-violet-400/20"></div>
     
-    <!-- Timeline items -->
     <div class="space-y-8">
-      {experiences.map((exp, index) => (
-        <div 
-          class="relative pl-8 animate-fade-in-up"
-          style={`animation-delay: ${index * 150}ms`}
-        >
-          <!-- Timeline dot -->
-          <div class="absolute left-0 top-1 w-6 h-6 rounded-full glass-strong border-2 border-primary/40 flex items-center justify-center">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
+      {experiences.map((exp) => (
+        <div class="relative pl-8">
+          <div class="absolute left-0 top-1 w-5 h-5 rounded-full bg-violet-100 border-2 border-violet-400 flex items-center justify-center">
+            <div class="w-2 h-2 bg-violet-500 rounded-full"></div>
           </div>
           
-          <!-- Content -->
           <div class="space-y-2">
             <div class="flex flex-wrap justify-between items-start gap-2">
               <div>
-                <h3 class="text-lg font-semibold text-slate-800">{exp.position}</h3>
-                <p class="text-primary font-medium">{exp.company}</p>
+                <h3 class="text-base font-semibold text-slate-800">{exp.position}</h3>
+                <p class="text-cyan-600 text-sm">{exp.company}</p>
               </div>
-              <span class="text-sm text-slate-500 bg-slate-200/50 px-3 py-1 rounded-full">
+              <span class="text-xs text-slate-500 bg-white/60 px-3 py-1 rounded-full border border-slate-200/50">
                 {exp.period}
               </span>
             </div>
@@ -44,7 +36,7 @@ const { experiences } = resumeData;
             <ul class="space-y-1">
               {exp.highlights.map((highlight) => (
                 <li class="text-slate-600 text-sm flex items-start gap-2">
-                  <span class="text-secondary mt-1.5">▹</span>
+                  <span class="text-cyan-500 mt-1">▹</span>
                   {highlight}
                 </li>
               ))}

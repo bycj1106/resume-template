@@ -15,11 +15,19 @@ export default {
         float: 'float 20s ease-in-out infinite',
         'float-delayed': 'float 25s ease-in-out 5s infinite',
         'float-slow': 'float 30s ease-in-out 10s infinite',
+        spin: 'spin 30s linear infinite',
+        pulse: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translate(0, 0)' },
-          '50%': { transform: 'translate(30px, -20px)' },
+          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%': { transform: 'translate(10px, -15px) rotate(2deg)' },
+          '50%': { transform: 'translate(-5px, -25px) rotate(-1deg)' },
+          '75%': { transform: 'translate(-15px, -10px) rotate(1deg)' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
       },
     },

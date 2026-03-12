@@ -10,8 +10,8 @@ const { class: className = "", hover = true, delay = 0 } = Astro.props;
 
 <div 
   class:list={[
-    "glass-strong rounded-2xl p-6",
-    hover && "glass-hover",
+    "glass-card",
+    hover && "glass-card-hover",
     className
   ]}
   style={delay ? `animation-delay: ${delay}ms` : undefined}

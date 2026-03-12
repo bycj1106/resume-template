@@ -8,11 +8,11 @@ const { name, title, avatar, summary, socials, email } = resumeData;
 ---
 
 <GlassCard class="glass-enter">
-  <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-    <!-- Avatar with enhanced glow -->
+  <div class="flex flex-col lg:flex-row items-center lg:items-start gap-6">
+    <!-- Avatar -->
     <div class="relative flex-shrink-0">
-      <div class="absolute -inset-4 bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 rounded-full blur-2xl opacity-40"></div>
-      <div class="relative w-28 h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-[3px] border-white/80 shadow-2xl">
+      <div class="absolute -inset-3 bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 rounded-full blur-xl opacity-40"></div>
+      <div class="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-[2.5px] border-white/80 shadow-xl">
         <img 
           src={avatar} 
           alt={`${name}'s avatar`}
@@ -27,27 +27,27 @@ const { name, title, avatar, summary, socials, email } = resumeData;
 
     <!-- Info -->
     <div class="flex-1 text-center lg:text-left">
-      <h1 class="text-2xl lg:text-3xl font-bold text-slate-800 mb-1">
+      <h1 class="text-xl lg:text-2xl font-bold text-slate-800">
         {name}
       </h1>
-      <p class="text-violet-600 font-medium text-lg mb-3">
+      <p class="text-violet-600 font-medium text-base mb-2">
         {title}
       </p>
-      <p class="text-slate-500 text-sm mb-5 max-w-lg leading-relaxed">
+      <p class="text-slate-500 text-sm mb-4 max-w-lg leading-relaxed">
         {summary}
       </p>
 
       <!-- Social links -->
-      <div class="flex justify-center lg:justify-start gap-2 mb-5">
+      <div class="flex justify-center lg:justify-start gap-2 mb-4">
         {socials.map((social) => (
           <a
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-violet-600 hover:bg-white/70 transition-all duration-200"
+            class="w-9 h-9 rounded-lg bg-white/30 backdrop-blur-sm border border-white/40 flex items-center justify-center text-slate-500 hover:text-violet-600 hover:bg-white/50 transition-all duration-200"
             aria-label={social.name}
           >
-            <Icon name={social.icon as IconName} class="w-5 h-5" />
+            <Icon name={social.icon as IconName} class="w-4 h-4" />
           </a>
         ))}
       </div>
@@ -55,7 +55,7 @@ const { name, title, avatar, summary, socials, email } = resumeData;
       <!-- CTA -->
       <a
         href={`mailto:${email}`}
-        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-xl font-medium text-sm hover:shadow-xl hover:shadow-violet-500/30 hover:-translate-y-0.5 transition-all duration-200"
+        class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-violet-500/25 hover:-translate-y-0.5 transition-all duration-200"
       >
         <Icon name="mail" class="w-4 h-4" />
         Contact Me

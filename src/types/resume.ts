@@ -1,3 +1,15 @@
+export type IconName =
+  | 'github'
+  | 'linkedin'
+  | 'mail'
+  | 'external-link'
+  | 'code'
+  | 'server'
+  | 'cloud'
+  | 'wrench'
+  | 'graduation-cap'
+  | 'award';
+
 export interface SocialLink {
   name: string;
   url: string;

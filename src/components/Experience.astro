@@ -6,34 +6,34 @@ const { experiences } = resumeData;
 ---
 
 <GlassCard delay={160}>
-  <h2 class="text-lg font-semibold text-slate-800 mb-6">
+  <h2 class="text-lg font-semibold text-slate-800 mb-4">
     Work Experience
   </h2>
   
   <div class="relative">
     <div class="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-violet-400/40 via-purple-400/30 to-violet-400/20"></div>
     
-    <div class="space-y-8">
+    <div class="space-y-5">
       {experiences.map((exp) => (
-        <div class="relative pl-8">
-          <div class="absolute left-0 top-1 w-5 h-5 rounded-full bg-violet-100 border-2 border-violet-400 flex items-center justify-center">
-            <div class="w-2 h-2 bg-violet-500 rounded-full"></div>
+        <div class="relative pl-7">
+          <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-violet-100/60 border-2 border-violet-400 flex items-center justify-center">
+            <div class="w-1.5 h-1.5 bg-violet-500 rounded-full"></div>
           </div>
           
-          <div class="space-y-2">
+          <div class="space-y-1.5">
             <div class="flex flex-wrap justify-between items-start gap-2">
               <div>
                 <h3 class="text-base font-semibold text-slate-800">{exp.position}</h3>
-                <p class="text-cyan-600 text-sm">{exp.company}</p>
+                <p class="text-cyan-600 text-sm font-medium">{exp.company}</p>
               </div>
-              <span class="text-xs text-slate-500 bg-white/60 px-3 py-1 rounded-full border border-slate-200/50">
+              <span class="text-xs text-slate-500 bg-white/30 px-2.5 py-0.5 rounded-full border border-white/20">
                 {exp.period}
               </span>
             </div>
             
             <p class="text-slate-500 text-sm">{exp.description}</p>
             
-            <ul class="space-y-1">
+            <ul class="space-y-0.5">
               {exp.highlights.map((highlight) => (
                 <li class="text-slate-600 text-sm flex items-start gap-2">
                   <span class="text-cyan-500 mt-1">▹</span>

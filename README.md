@@ -1,55 +1,57 @@
 # Portfolio Crystal
 
-A personal resume website built with Astro, TypeScript, and Tailwind CSS, featuring a beautiful Glassmorphism design.
+个人简历网站，基于 Astro、TypeScript 和 Tailwind CSS 构建，采用紫色主题和玻璃态效果设计。
 
-## Features
+## 特性
 
-- Glassmorphism UI design with animated gradient background
-- Fully responsive (desktop, tablet, mobile)
-- TypeScript type-safe data structure
-- Easy to customize via `src/data/resume.ts`
-- Vercel zero-config deployment ready
+- 紫色主题配色方案（violet/purple/cyan）
+- 玻璃态效果（Glassmorphism）UI 设计
+- 几何图案背景动画
+- 完全响应式设计（桌面、平板、移动端）
+- TypeScript 类型安全的数据结构
+- 通过 `src/data/resume.ts` 轻松自定义
+- Vercel 零配置部署
 
-## Tech Stack
+## 技术栈
 
-- **Framework**: Astro 4.0+
-- **Styling**: Tailwind CSS + @tailwindcss/typography
-- **Language**: TypeScript (strict mode)
-- **Font**: @fontsource/noto-sans-sc
+- **框架**: Astro 4.0+
+- **样式**: Tailwind CSS + @tailwindcss/typography
+- **语言**: TypeScript（严格模式）
+- **字体**: Noto Sans SC
 
-## Getting Started
+## 快速开始
 
 ```bash
-# Install dependencies
-npm install
+# 安装依赖
+pnpm install
 
-# Start development server
-npm run dev
+# 启动开发服务器
+pnpm dev
 
-# Build for production
-npm run build
+# 构建生产版本
+pnpm build
 
-# Preview production build
-npm run preview
+# 预览生产构建
+pnpm preview
 ```
 
-## Customization
+## 自定义
 
-Edit `src/data/resume.ts` to update your personal information, work experience, projects, skills, and more.
+编辑 `src/data/resume.ts` 更新个人信息、工作经历、项目、技能等。
 
-## Deployment
+## 部署
 
-This project is ready for Vercel deployment:
+项目已适配 Vercel 部署：
 
 ```bash
-# Install Vercel CLI
-npm i -g vercel
+# 安装 Vercel CLI
+pnpm add -g vercel
 
-# Deploy
+# 部署
 vercel
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+或连接 GitHub 仓库到 Vercel 实现自动部署。
 
 ## License
 

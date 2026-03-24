@@ -231,52 +231,38 @@ const siteUrl = Astro.site ? Astro.site.href : 'https://example.com';
     -webkit-animation: slideUpCard 0.6s ease-out forwards;
   }
 
-  /* Print Styles - A4 PDF */
+  /* Print Styles - Professional Resume Layout */
   @media print {
     @page {
-      size: A4;
-      margin: 15mm;
+      size: A4 portrait;
+      margin: 8mm 10mm;
+      marks: none;
     }
 
     html, body {
       background: white !important;
-      color: black !important;
-      font-size: 11pt;
-      line-height: 1.4;
+      color: #1e293b !important;
+      font-size: 9pt;
+      line-height: 1.35;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
-    /* Hide background elements */
-    .fixed,
-    [class*="animate-"],
-    .print\:hidden {
-      display: none !important;
+    /* Main content container */
+    main {
+      padding: 0 !important;
+      max-width: 100% !important;
+      margin: 0 !important;
     }
 
-    /* Reset glass card for print */
-    .glass-card {
-      background: white !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      border: 1px solid #e2e8f0 !important;
-      box-shadow: none !important;
-      border-radius: 8px !important;
-      padding: 12pt !important;
-      margin-bottom: 12pt !important;
-      page-break-inside: avoid;
-    }
-
-    .glass-card::before {
-      display: none !important;
-    }
-
-    .glass-card-hover:hover {
-      transform: none !important;
-      box-shadow: none !important;
-    }
-
-    /* Reset grid for print */
+    /* Single column layout */
     .grid {
       display: block !important;
+    }
+
+    .lg\:grid-cols-12 {
+      display: flex !important;
+      flex-direction: column !important;
     }
 
     .lg\:col-span-4,
@@ -289,30 +275,242 @@ const siteUrl = Astro.site ? Astro.site.href : 'https://example.com';
       position: static !important;
     }
 
-    /* Text colors for print */
-    .text-slate-800,
-    .text-slate-700 {
-      color: #1e293b !important;
+    /* Hide background elements */
+    .fixed,
+    [class*="animate-"],
+    .print\:hidden,
+    .sr-only {
+      display: none !important;
     }
 
-    .text-slate-600,
-    .text-slate-500 {
+    /* Remove geometric background */
+    .fixed.inset-0 {
+      display: none !important;
+    }
+
+    /* Reset glass card for print - professional style */
+    .glass-card {
+      background: white !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin-bottom: 6pt !important;
+      page-break-inside: avoid;
+    }
+
+    .glass-card::before {
+      display: none !important;
+    }
+
+    .glass-card-hover:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Section title - clean professional style */
+    .glass-card > h2 {
+      font-size: 9.5pt !important;
+      font-weight: 600 !important;
+      margin-bottom: 4pt !important;
+      padding-bottom: 2pt !important;
+      border-bottom: 0.5pt solid #cbd5e1 !important;
+      color: #1e293b !important;
+      letter-spacing: 0.3pt;
+    }
+
+    /* Spacing adjustments */
+    .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 4pt !important;
+    }
+
+    .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 3pt !important;
+    }
+
+    .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 3pt !important;
+    }
+
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 2pt !important;
+    }
+
+    .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 2.5pt !important;
+    }
+
+    .gap-6 {
+      gap: 6pt !important;
+    }
+
+    .gap-4 {
+      gap: 4pt !important;
+    }
+
+    .gap-3 {
+      gap: 3pt !important;
+    }
+
+    .gap-2 {
+      gap: 2pt !important;
+    }
+
+    .gap-1\.5 {
+      gap: 1.5pt !important;
+    }
+
+    /* Hero section - centered layout */
+    .lg\:col-span-4 .glass-card:first-child {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      padding: 6pt 4pt !important;
+      border-bottom: 0.5pt solid #e2e8f0 !important;
+      margin-bottom: 6pt !important;
+    }
+
+    /* Avatar - centered above info */
+    .lg\:col-span-4 .glass-card:first-child .relative.flex-shrink-0 {
+      margin-bottom: 4pt !important;
+      margin-right: 0 !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .w-24,
+    .lg\:col-span-4 .glass-card:first-child .lg\:w-28,
+    .lg\:col-span-4 .glass-card:first-child .w-24.h-24 {
+      width: 48pt !important;
+      height: 48pt !important;
+      min-width: 48pt !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .rounded-full {
+      border-radius: 50% !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .border-\[2\.5px\] {
+      border-width: 0.75pt !important;
+      border-color: #94a3b8 !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .shadow-xl {
+      box-shadow: none !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .absolute.-inset-3 {
+      display: none !important;
+    }
+
+    /* Hero info */
+    .lg\:col-span-4 .glass-card:first-child .flex-1 {
+      width: 100% !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .text-center {
+      text-align: center !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .lg\:text-left {
+      text-align: center !important;
+    }
+
+    /* Hero text */
+    .lg\:col-span-4 .glass-card:first-child .text-xl,
+    .lg\:col-span-4 .glass-card:first-child .lg\:text-2xl {
+      font-size: 14pt !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1pt !important;
+      color: #0f172a !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .text-blue-600 {
+      font-size: 9pt !important;
+      margin-bottom: 3pt !important;
+      color: #2563eb !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .text-sm {
+      font-size: 8.5pt !important;
+      line-height: 1.35 !important;
+      margin-bottom: 3pt !important;
       color: #475569 !important;
     }
 
-    .text-slate-400 {
-      color: #64748b !important;
+    .lg\:col-span-4 .glass-card:first-child .text-slate-500 {
+      font-size: 8pt !important;
+      line-height: 1.3 !important;
+      margin-bottom: 2pt !important;
     }
 
-    .text-blue-600,
-    .text-cyan-600 {
-      color: #2563eb !important;
+    .lg\:col-span-4 .glass-card:first-child .max-w-lg {
+      max-width: 100% !important;
+      margin: 0 auto !important;
     }
 
-    /* Links */
-    a {
-      color: #2563eb !important;
-      text-decoration: none !important;
+    .lg\:col-span-4 .glass-card:first-child .leading-relaxed {
+      line-height: 1.35 !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .mb-4 {
+      margin-bottom: 3pt !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .mb-2 {
+      margin-bottom: 2pt !important;
+    }
+
+    /* Social icons - centered */
+    .lg\:col-span-4 .glass-card:first-child .flex.justify-center,
+    .lg\:col-span-4 .glass-card:first-child .flex.gap-2 {
+      justify-content: center !important;
+      gap: 2pt !important;
+      margin-bottom: 0 !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .w-9,
+    .lg\:col-span-4 .glass-card:first-child .h-9 {
+      width: 12pt !important;
+      height: 12pt !important;
+      min-width: 12pt !important;
+    }
+
+    .lg\:col-span-4 .glass-card:first-child .w-4.h-4 {
+      width: 8pt !important;
+      height: 8pt !important;
+    }
+
+    /* Hide CTA button in print */
+    .lg\:col-span-4 .glass-card:first-child a[href^="mailto"] {
+      display: none !important;
+    }
+
+    /* Hide decorative elements */
+    .backdrop-blur-sm {
+      backdrop-filter: none !important;
+      background: transparent !important;
+    }
+
+    .bg-white\/30,
+    .bg-white\/35,
+    .bg-white\/40,
+    .bg-white\/50,
+    .bg-white\/15,
+    .bg-white\/25,
+    .bg-white\/60 {
+      background: transparent !important;
+    }
+
+    .border-white\/20,
+    .border-white\/30,
+    .border-white\/35,
+    .border-white\/40,
+    .border-white\/50,
+    .border-white\/60 {
+      border: none !important;
     }
 
     /* Remove gradients */
@@ -322,7 +520,104 @@ const siteUrl = Astro.site ? Astro.site.href : 'https://example.com';
       background: none !important;
     }
 
-    /* Ensure proper page breaks */
+    /* Timeline - cleaner look */
+    .absolute.left-\[9px\] {
+      left: 5px !important;
+    }
+
+    .absolute.left-0 {
+      left: -1px !important;
+    }
+
+    .w-4.h-4 {
+      width: 7pt !important;
+      height: 7pt !important;
+    }
+
+    .w-1\.5.h-1\.5 {
+      width: 2.5pt !important;
+      height: 2.5pt !important;
+    }
+
+    .pl-7 {
+      padding-left: 10pt !important;
+    }
+
+    /* Timeline line */
+    .absolute.left-\[8px\] {
+      left: 4.5px !important;
+      width: 0.5pt !important;
+    }
+
+    /* Experience items */
+    .space-y-5 {
+      gap: 0 !important;
+    }
+
+    .text-base {
+      font-size: 9pt !important;
+    }
+
+    .text-sm {
+      font-size: 8.5pt !important;
+    }
+
+    .text-xs {
+      font-size: 8pt !important;
+    }
+
+    /* Skills tags - compact */
+    .glass-card .flex.flex-wrap {
+      gap: 1.5pt !important;
+    }
+
+    .glass-card .px-2\.5,
+    .glass-card .py-1 {
+      padding: 0.5pt 2.5pt !important;
+      font-size: 7.5pt !important;
+      border: 0.5pt solid #e2e8f0 !important;
+      border-radius: 2pt !important;
+      background: #f8fafc !important;
+      color: #334155 !important;
+    }
+
+    /* Sub-items in cards */
+    .glass-card .p-3 {
+      padding: 3pt !important;
+    }
+
+    .glass-card .gap-3 {
+      gap: 3pt !important;
+    }
+
+    .glass-card .space-y-2\.5 {
+      gap: 2pt !important;
+    }
+
+    /* Education & Awards cards */
+    .glass-card .p-3.rounded-lg {
+      padding: 2.5pt !important;
+      border: none !important;
+      border-bottom: 0.5pt dashed #e2e8f0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+    }
+
+    .glass-card .p-2 {
+      padding: 2pt !important;
+    }
+
+    .glass-card .w-9.h-9 {
+      width: 11pt !important;
+      height: 11pt !important;
+    }
+
+    .glass-card .w-9.h-9 .w-4.h-4 {
+      width: 7pt !important;
+      height: 7pt !important;
+    }
+
+    /* Page breaks */
     h1, h2, h3, h4, h5, h6 {
       page-break-after: avoid;
       break-after: avoid;
@@ -330,6 +625,48 @@ const siteUrl = Astro.site ? Astro.site.href : 'https://example.com';
 
     .glass-card {
       page-break-after: auto;
+    }
+
+    /* Experience section special handling */
+    .glass-card .relative .space-y-1\.5 {
+      gap: 1.5pt !important;
+    }
+
+    /* Links */
+    a {
+      color: #2563eb !important;
+      text-decoration: none !important;
+    }
+
+    /* Summary/About section */
+    .text-slate-500 {
+      font-size: 8.5pt !important;
+      line-height: 1.4 !important;
+    }
+
+    .glass-card .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 3pt !important;
+    }
+
+    .glass-card h2.mb-2,
+    .glass-card h2.mb-4 {
+      margin-bottom: 3pt !important;
+    }
+
+    .glass-card .leading-relaxed {
+      line-height: 1.4 !important;
+    }
+
+    /* Highlight bullets */
+    .text-cyan-500,
+    .text-cyan-600 {
+      font-size: 8pt !important;
+      color: #0891b2 !important;
+    }
+
+    /* Contact info */
+    .glass-card .text-xs.text-slate-500 {
+      font-size: 7.5pt !important;
     }
   }
 </style>

@@ -7,7 +7,6 @@ import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import Education from '../components/Education.astro';
 import Awards from '../components/Awards.astro';
-import Contact from '../components/Contact.astro';
 import { resumeData } from '../data/resume';
 
 const { name, title } = resumeData;
@@ -19,7 +18,6 @@ const { name, title } = resumeData;
       <!-- Left Sidebar - Fixed on Desktop -->
       <div class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
         <Hero />
-        <Contact />
         <Education />
         <Awards />
       </div>
@@ -28,13 +26,13 @@ const { name, title } = resumeData;
       <div class="lg:col-span-8 space-y-6">
         <About />
         <Experience />
-        <Skills />
         <Projects />
+        <Skills />
       </div>
     </div>
     
     <!-- Footer -->
-    <footer class="mt-12 pt-8 border-t border-slate-200/50 text-center">
+    <footer class="mt-12 pt-8 border-t border-slate-200/50 text-center print:hidden">
       <p class="text-slate-400 text-sm">© {new Date().getFullYear()} 四夕云升 · Built with Astro & Tailwind CSS</p>
     </footer>
   </main>

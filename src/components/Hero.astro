@@ -11,7 +11,7 @@ const { name, title, avatar, summary, socials, email } = resumeData;
   <div class="flex flex-col lg:flex-row items-center lg:items-start gap-6">
     <!-- Avatar -->
     <div class="relative flex-shrink-0">
-      <div class="absolute -inset-3 bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 rounded-full blur-xl opacity-40"></div>
+      <div class="absolute -inset-3 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 rounded-full blur-xl opacity-40"></div>
       <div class="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-[2.5px] border-white/80 shadow-xl">
         <img 
           src={avatar} 
@@ -30,7 +30,7 @@ const { name, title, avatar, summary, socials, email } = resumeData;
       <h1 class="text-xl lg:text-2xl font-bold text-slate-800">
         {name}
       </h1>
-      <p class="text-violet-600 font-medium text-base mb-2">
+      <p class="text-blue-600 font-medium text-base mb-2">
         {title}
       </p>
       <p class="text-slate-500 text-sm mb-4 max-w-lg leading-relaxed">
@@ -44,7 +44,7 @@ const { name, title, avatar, summary, socials, email } = resumeData;
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-lg bg-white/30 backdrop-blur-sm border border-white/40 flex items-center justify-center text-slate-500 hover:text-violet-600 hover:bg-white/50 transition-all duration-200"
+            class="w-9 h-9 rounded-lg bg-white/30 backdrop-blur-sm border border-white/40 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-white/50 transition-all duration-200"
             aria-label={social.name}
           >
             <Icon name={social.icon as IconName} class="w-4 h-4" />
@@ -55,7 +55,7 @@ const { name, title, avatar, summary, socials, email } = resumeData;
       <!-- CTA -->
       <a
         href={`mailto:${email}`}
-        class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-violet-500/25 hover:-translate-y-0.5 transition-all duration-200"
+        class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 transition-all duration-200"
       >
         <Icon name="mail" class="w-4 h-4" />
         Contact Me
